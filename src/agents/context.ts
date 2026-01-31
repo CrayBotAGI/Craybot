@@ -10,7 +10,7 @@ type ModelEntry = { id: string; contextWindow?: number };
 const MODEL_CACHE = new Map<string, number>();
 const loadPromise = (async () => {
   try {
-    const { discoverAuthStorage, discoverModels } = await import("@mariozechner/pi-coding-agent");
+    const { discoverAuthStorage, discoverModels } = await import("./pi-model-discovery.js");
     const cfg = loadConfig();
     await ensureOpenClawModelsJson(cfg);
     const agentDir = resolveOpenClawAgentDir();
